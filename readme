@@ -1,0 +1,93 @@
+[slide 1]
+Good morning all, my name is Whit Matteson. I am a Senior Research Engineer at the Georgia Tech Research Institute, where I am also the branch head of our Applied Open Architectures Branch. Today I’ll be talking through an approach we came up with for performing a MOSA evaluation of an architecture.
+[slide 2]
+The Army’s PEO-GCS set out to develop an architecture for a common infrastructure, for ground combat vehicles. 
+Our mandate was to evaluate this architecture for its MOSA qualities – in other words, did they achieve their mandate to foster MOSA principles in their architecture? (which will then hopefully bake in MOSA qualities into systems built from that architecture)
+They wanted to make sure that they really were in fact achieving MOSA principles, and not just checking a box by hand-waving away that they would “use an open standard” – they wanted to be deliberate.
+So in order to do this assessment of how well they were embracing MOSA, and help them make sure they weren’t just checking a box, we developed a process for evaluating an architecture for how well it will foster MOSA principles.
+We did this in a systematic, traceable way – where the sequence of events here was to first derive our MOSA quality attributes, then develop evaluable MOSA criteria to examine in the architecture, and finally to apply the MOSA criteria and do that evaluation on PEO-GCS’s common infrastructure architecture. We will talk through each of these steps in more detail shortly, but first we’ll take a closer look at this overall sequence.
+[slide 3]
+This is a more detailed look at the process we came up with – we’ll dive into each of these shortly.
+But the background here is that we began by looking around for a methodology we could apply that already did what we needed – evaluate an architecture for MOSA. We found some similar exercises, but nothing that had actually yet gone through the process of evaluating an actual architecture. There was some high level thought put into it, for example the Army’s Architecture Verification Environment was in the same ballpark as what we needed, but didn’t yet have the meat to it that we could actually apply to something. Basically we found that, while industry seems to care about this concept, it hadn’t been taken to fruition yet anywhere we could find.
+So once we realized that, and had dug in and learned more about PEO-GCS’s architecture, we realized we would need our own approach that would allow us to systematically and objectively assess MOSA criteria against an architecture. 
+We wrestled with that for a while – looked at doing little x/y graphs that plotted business cases against architectural drivers and assessing requirements that way, we thought about different scoring mechanisms, and in the end we landed on this MOSA-criteria-to-requirements mapping mechanism. That’s what we’re looking at here. Now we’ll dive into each of these steps.
+
+[slide 4]
+So with this first step, we set out to derive Quality Attributes that are relevant for MOSA. 
+You might ask, what did we derive them from? The answer is that PEO-GCS provided us with their top level business objectives, which we then used as the foundation of our evaluation. We were deliberate about keeping those business drivers at top of mind for this whole exercise.
+So with those business drivers provided by our sponsor, we started by taking that one level down, and deriving quality attributes from those drivers.
+[slide 5]
+So in the case of PEO-GCS, their top level business driver was Lower Overall System Cost, which we then broke down into sub-drivers, from which we derived Quality Attributes (-ilities).
+We brainstormed, reviewed literature, and collected data and information from multiple disparate (industry, academia, government) sources in order to create our list of applicable MOSA quality attributes. 
+We deconflicted the definitions and narrowed the list down to individual non-overlapping Quality Attributes. This was interesting, because we emphasized early on that this was about concepts – not semantics. This was very intentionally not a vocabulary exercise.
+This then produced a list of MOSA quality attributes that we thought would collectively achieve the overall business driver, and that we could evaluate their architecture against. 
+[slide 6]
+And like I said – throughout that, we maintained the focus on:  “What is the overall business driver (business priority)?”  
+And how does the BD “decompose” into Quality Attributes that, when realized, achieve that business objective?
+Using our definitions, we arranged the Quality Attributes so that the QAs map up to the business drivers.
+Basically in the same way that systems engineers decompose complexity to understand system functionality, we decomposed the business drivers into a hierarchy of MOSA Quality Attributes. Step #1.
+[slide 7]
+And then we applied that same decomposition mentality to the quality attributes, to again derive downward to come up with specific, evaluable MOSA criteria that map upward to the QAs, and ultimately the business drivers.
+[slide 8]
+Once we had the quality attributes traced from business drivers, like I said - we derived a set of specific criteria to look for when evaluating the target architecture for MOSA.
+So for an example in generating criteria from a quality attribute, let’s look at portability. We define portability as how easy it is technically to lift a system or component out of a platform, and then replace it or use it in another platform. And so we decided that a criteria that makes it easier to lift a component out and replace it or use it elsewhere, is the concept of conforming to an open standard. Conforming to an open standard should make that replacement/reuse easier because the interface behaves in a more predictable and knowable way. So to assess the architecture for portability, one of the criteria we looked for was “does the architecture foster the usage of widely-adopted open standards”.
+To aid in thinking about how to apply this criteria, we also provided a bit of help in the form of a spectrum, that hopefully provides some context. So in the case of how much an architecture fosters the usage of open standards, we said it would fall somewhere within “no usage” to “full usage”. Or, “no adoption” to “full adoption”. This helps orient the engineer who is applying the criteria against the architecture.
+And this was just one of several criteria that together cover our concept of portability. Other criteria included separation of concerns, operating on common computing resources, allowing the use of software adapters for integration, etc. The idea is that together, these cover our concept of portability.
+[slide 9]
+Next we have some additional example of criteria for other quality attributes. In this case we’re looking at maintainability and interface transparency quality attributes. 
+Some criteria we derived are fuzzier than others, that is to say, it’s less objective and clear how to evaluate it, but it still provides you with the concept that you’re looking for. So some are broader than others - they’re less prescriptive in how to evaluate, but can address wider range of implementation.
+So in these examples we see “Architecture fosters ease of improvements and upgrades”, well that’s less obvious how to evaluate than the lower one, “Architecture does not allow for exceptions to required disclosure…”. It either allows for some, or it doesn’t. Versus, fostering ease of improvement, it’s less clear how to actually look for that.
+So there’s probably some room for some more research, thought, and expansion of some of these. But, the key is that you still have this characteristic to know what you’re looking for, which is what we need
+[slide 10]
+The last note on the MOSA criteria here - we had to put some thought into these criteria in terms of what they’re aimed at. It seems kind of straightforward in retrospect, but it was a breakthrough when we internalized that we were evaluating an architecture – not evaluating a component or system.
+Because normally when you think about evaluating something for openness, you’re thinking conformance of a system or system design to an open standard. But here, our task was evaluating the architecture on which the system is based – NOT the system itself. 
+So we’re looking for looking for characteristics of the architecture, not the system. For example, “Architecture requires disclosure” vs. “The system discloses”. Or said another way here, the architecture itself is not what needs to be portable – the system is. The architecture needs to bake portability into the systems and system designs. So that’s an important distinction about this approach.
+[slide 11]
+So, now we’re armed with our MOSA criteria, derived from quality attributes, which tie directly to our sponsor’s business drivers. Now it’s time to apply this to their architecture and see how they did, when it comes to fostering MOSA with their architecture.
+[slide 12]
+Here’s just a look at the overall process again. We’re about to move into the lower right area here, where we do a mapping between the MOSA criteria and the architecture itself. Which MOSA criteria are met by what parts of the architecture? And to what degree? Why or why not?
+For our first pass, we actually developed an Excel spreadsheet to do our mapping.
+We learned a couple things from that, and then implemented something similar in Cameo, but unlocked some tools that helped us actually summarize our findings.
+[slide 13]
+In terms of evaluation mechanisms, we developed a couple of helpful tools here to allow us to wrap our arms around the problem of doing a comprehensive evaluation. 
+For example, we found that some people liked to hold the requirements in their mind and go hunt for MOSA criteria, and some people preferred the opposite. So we built both views into our Cameo setup.
+Then we have the matrix to hold our overall view of MOSA adherence of the requirements to our criteria.
+Then, Cameo also basically helped us with capturing the summary findings – these are under the Verification Tools here. 
+By examining the compliance matrix and metrics table, we would be able to exercise overall engineering judgement on how well a particular Quality Attribute was met, and write verbiage to detail that as our executive summary for that QA.
+We’ll look briefly in more detail at some of these items here.
+[slide 14]
+Here are samples of the two types of mapping views I mentioned – 
+Requirements to Criteria? Or Criteria to Requirements?
+Same result either way, it’s just whatever method the engineer prefers. We provided both, because even within our own 3 person team, we had different preferences.
+
+
+
+
+[slide 15]
+We also have this metrics table, which provides an overview of how many requirements there were in a particular section of the architecture, how many mapped to particular Quality Attributes via the criteria.
+This helps provide an overall look at how well the architecture is doing toward the Quality Attributes.
+But, it’s important to note that the actual engineering assessment must be qualitative – not quantitative. It requires applying engineering judgement, because there may be one criteria out of 5 [or whatever] that is too important to a particular quality attribute.
+Take Interface Transparency – if your architecture doesn’t require vendors to disclose interface format and behavior, you’re not open, and you don’t have interface transparency. That’s a single criterion that would make or break Interface Transparency. 
+But then you could have higher degrees of Interface Transparency if additional criteria are met. It’s just important to make that qualitative assessment – informed by views like this, but still being mindful about it, and using it as part of doing a qualitative assessment, and applying engineering judgement.
+[slide 16]
+This is the executive summary table. Basically we took our findings that are contained in the evaluation matrix and the metrics table, took everything together and thought about it holistically, and wrote up our findings. 
+The architecture itself was broken up into chunks of requirements called specifications, so we evaluated each specification against the MOSA criteria.
+Then we would summarize a particular spec for fostering a high, moderate, low, or non-indicative degree for each Quality Attribute, and give a short summary of the reasoning. This was where and how we captured our summarized findings for the architecture as a whole. 
+Overall, having gone through this exercise, this is good evidence that this concept of MOSA evaluation can indeed be taken all the way through application, and provide value to a program.
+[slide 17]
+I also want to point out that I think PEO-GCS really took initiative here by evaluating their architecture for how well it fosters MOSA principles.
+Because like I said, normally when you think of evaluating for MOSA, you're evaluating a system (or system design) for compliance with an open standard.
+However, this type of evaluation is to assess whether an architecture will facilitate those MOSA principles in system designs built from that architecture. Does this architecture bake in MOSA into its subsequent system designs.
+This exercise provides some justification and confidence that system designs that trace to this architecture will embrace MOSA principles. This is valuable for actually baking in MOSA into your program’s systems, and for having a tangible artifact for justifying that you are using MOSA. You’re not just checking a box, you can look at this robust and thoroughly traceable artifact to get you there.
+
+[slide 18]
+In conclusion: ultimately, the way to think about this is that this process and its artifacts provide you with a way to systematically evaluate an architecture for MOSA principles. 
+The approach works – it can be applied to other architectures, it can be modified to be traceable to whatever architecture artifacts are available, the MOSA criteria could be adjusted – and it all works because it’s robustly traceable, and pretty straightforward. It may take some refactoring for other specific use cases (other architectures or other sponsors with other business drivers), but because it’s methodical and traceable, the approach is broadly applicable.
+Overall, it gives us a way to assess that a program is using MOSA, and to have a tangible artifact that directly shows what elements of your architecture genuinely fulfill real MOSA characteristics.
+And that’s it - thank you very much!
+
+
+
+
+AVE: similar approach, derivations from BDs through QAs. When we got briefed on it, we were already far enough down our own path that we realized we had actually largely arrived at a similar approach.
+
